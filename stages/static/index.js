@@ -25,6 +25,12 @@ async function updateAuthUI() {
 
   document.getElementById('login').disabled = isAuthenticated;
   document.getElementById('logout').disabled = !isAuthenticated;
+
+  if (isAuthenticated) {
+    const user = await auth0.getUser();
+    const el = document.getElementById('greeting');
+    el.textContent = `Hello ${user.name} (${user.email})!`;
+  }
 }
 
 async function login() {
