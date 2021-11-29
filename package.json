@@ -5,17 +5,12 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "echo 'use  `npm run stage-x`  where x is from 1 to 6'",
-    "stage-1": "echo 'stage 1 does not have a server'",
-    "stage-2": "node stages/2/server",
-    "stage-3": "node stages/3/server",
-    "stage-4": "node stages/4/server",
-    "stage-5": "node stages/5/server",
-    "stage-6": "node stages/6/server",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "softeng@port.ac.uk",
+  "author": "taylor.mcfarlane@outlook.com",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
