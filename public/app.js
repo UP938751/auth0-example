@@ -1,5 +1,5 @@
 async function fetchAuthConfig() {
-  const response = await fetch('/server/auth-config.json');
+  const response = await fetch('/auth-config');
   if (response.ok) {
     return response.json();
   } else {
@@ -12,7 +12,8 @@ let auth0 = null;
 
 // Uses fetchAuthConfig to obtain the configuration file and initialize the auth0 variable
 async function initializeAuth0Client() {
-  const config = fetchAuthConfig();
+  const config = await fetchAuthConfig();
+
   auth0 = await createAuth0Client({
     domain: config.domain,
     client_id: config.clientId,
@@ -36,14 +37,12 @@ async function login() {
   await auth0.loginWithRedirect({
     redirect_uri: window.location.origin, // redirect user back to the same page they are on currently.
   });
-  console.log('Login successful');
 }
 
 function logout() {
   auth0.logout({
     returnTo: window.location.origin,
   });
-  console.log('Login successful');
 }
 
 async function handleAuth0Redirect() {
@@ -75,7 +74,7 @@ function setupListeners() {
 }
 
 
-// this will run when the page loads
+// runs when the page loads
 async function init() {
   await initializeAuth0Client();
   await setupListeners();

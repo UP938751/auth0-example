@@ -9,8 +9,8 @@ app.get('/auth-config', (req, res) => {
   res.json(authConfig);
 });
 
-// this will serve the files present in static/ for all other requests
-app.use(express.static(new URL('../static', import.meta.url).pathname));
+// this will serve the files present in public/ for all other requests
+app.use(express.static(new URL('../public', import.meta.url).pathname));
 
 // start the server
 const PORT = process.env.PORT || 8080;
