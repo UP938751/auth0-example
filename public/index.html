@@ -5,13 +5,27 @@
         <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" async defer></script>
         <script type="module" src="app.js" async defer></script>
         <link rel="icon" href="data:,"><!-- prevent favicon requests -->
+        <style>
+            #server-response {
+              border: 1px dashed black;
+              min-width: 10em;
+              min-height: 1em;
+              padding: .5em;
+            }
+        </style>
+          
     </head>
     <body>
         <h2>Test Authentication</h2>
         <p>Welcome to our page!</p>
         <p id="greeting">Hello!</p>
-            <button id="login" disabled="true">Log in</button>
-            <button id="logout" disabled="true">Log out</button>
+            <button id="login" disabled=>Log in</button>
+            <button id="logout" disabled=>Log out</button>
         </p>
+        <p><button id="call" disabled>Make an API call</button>
+
+        <p>Below is the response from the server API:
+        
+        <pre id="server-response"></pre>
     </body>
 </html>
