@@ -29,8 +29,7 @@ app.get('/api/hello', async (req, res) => {
 });
 
 // this will serve the files present in public/ for all other requests
-// app.use(express.static(new URL('../public', import.meta.url).pathname));
-app.use(express.static('public'));
+app.use(express.static(new URL('../public', import.meta.url).pathname));
 
 // start the server
 const PORT = process.env.PORT || 8080;
