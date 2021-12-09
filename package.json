@@ -15,12 +15,12 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-oauth2-jwt-bearer": "^1.0.1",
-    "node-fetch": "^3.1.0",
-    "nodemon": "^2.0.15"
+    "node-fetch": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-portsoc": "^0.8.2"
+    "eslint-config-portsoc": "^0.8.2",
+    "nodemon": "^2.0.15"
   },
   "eslintConfig": {
     "extends": "portsoc",
